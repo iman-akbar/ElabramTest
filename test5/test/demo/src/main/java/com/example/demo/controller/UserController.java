@@ -30,7 +30,7 @@ public class UserController {
     @PostMapping(path = "/payment", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> postPayment(@RequestBody PaymentDto paymentDto) {
         LinkedHashMap<String, Object> res = new LinkedHashMap<>();
-        userRepository.postPayment(paymentDto.getProcessingode(), paymentDto.getAdditionalfield());
+        userRepository.postPayment(paymentDto.getProcessingcode(), paymentDto.getAdditionalfield());
         res.put("data", "ok");
         return ResponseEntity.ok().body(res);
     }

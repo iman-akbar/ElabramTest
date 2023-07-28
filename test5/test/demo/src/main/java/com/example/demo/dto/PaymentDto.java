@@ -10,6 +10,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentDto {
-    String processingode;
-    String additionalfield;
+     String processingcode;
+     String pan;
+     String transactionamount;
+     String transactiondatetime;
+     String transactiontraceauditnumber;
+     String systemtraceauditnumber;
+     String localtransactiondatetime;
+     String settlementdate;
+     String capturedate;
+     String merchanttype;
+     String posentrymode;
+     String feetype;
+     String feeamount;
+     String acquiredid;
+     String issuerid;
+     String forwadingid;
+     String rrn;
+     String approvalcode;
+     String terminalid;
+     String merchantid;
+     String merchantname;
+     String merchantcity;
+     String merchantcountry;
+     String productindicator;
+     String customerdata;
+     String merchantcriteria;
+     String currencycode;
+     String postalcode;
+     String additionalfield;
+     String customerpan;
 }
