@@ -1,1 +1,5 @@
 my most mastered skill is in javascript especially in front-end because my most experience is as front end developer and my most used framework is vue.js
+and my second mastered skill is using java spring boot on back end part because since my first experience i`m using java on back end part
+some database that i`m mastered ar postgrees, mysql,and oracle and i`m also ever learn about mongoDb as my nosql
+
+
