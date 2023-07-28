@@ -17,6 +17,8 @@ public interface UserRepository extends JpaRepository<PaymentModel,String> {
     @Query(value = "select * from Payment" , nativeQuery = true)
     List<PaymentModel> getPayment();
 
+    @Query(value = "select * from payment p order by payment_id desc limit 1" , nativeQuery = true)
+    List<PaymentModel> getUpdate();
     @Modifying
     @Query(value = "insert into payment (processingCode, additionalField, pan, transactionAmount," +
             "transactionDateTime, transactionTraceAuditNumber,systemTraceAuditNumber, localTransactionDateTime, settlementDate, captureDate, merchantType," +
