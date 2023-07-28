@@ -18,6 +18,20 @@ public interface UserRepository extends JpaRepository<PaymentModel,String> {
     List<PaymentModel> getPayment();
 
     @Modifying
-    @Query(value = "insert into payment (processingCode, additionalField) values(:processingode, :additionalfield)" , nativeQuery = true)
-    public void postPayment(@Param("processingode") String processingode, @Param("additionalfield") String additionalfield);
+    @Query(value = "insert into payment (processingCode, additionalField, pan, transactionAmount," +
+            "transactionDateTime, transactionTraceAuditNumber,systemTraceAuditNumber, localTransactionDateTime, settlementDate, captureDate, merchantType," +
+            "posEntryMode, feeType, feeAmount, acquiredId, issuerId, forwadingId, rrn, approvalCode, terminalId, merchantId, merchantName, merchantCity, merchantCountry," +
+            "productIndicator, customerData, merchantCriteria, currencyCode, postalCode, customerPan) values(:processingcode, :additionalfield, :pan, :transactionamount, :transactiondatetime, :transactiontraceauditnumber, :systemtraceauditnumber," +
+            ":localtransactiondatetime, :settlementdate, :capturedate, :merchanttype, :posentrymode, :feetype, :feeamount, :acquiredid, :issuerid, :forwadingid," +
+            ":rrn, :approvalcode, :terminalid, :merchantid, :merchantname, :merchantcity, :merchantcountry, :productindicator, :customerdata, :merchantcriteria, :currencycode, :postalcode, :customerpan)" , nativeQuery = true)
+    public void postPayment(@Param("processingcode") String processingcode, @Param("additionalfield") String additionalfield, @Param("pan") String pan,
+                            @Param("transactionamount") String transactionamount,@Param("transactiondatetime") String transactiondatetime,
+                            @Param("transactiontraceauditnumber") String transactiontraceauditnumber,@Param("systemtraceauditnumber") String systemtraceauditnumber,@Param("localtransactiondatetime") String localtransactiondatetime,
+                            @Param("settlementdate") String settlementdate,@Param("capturedate") String capturedate, @Param("merchanttype") String merchanttype,
+                            @Param("posentrymode") String posentrymode,@Param("feetype") String feetype,@Param("feeamount") String feeamount,
+                            @Param("acquiredid") String acquiredid,@Param("issuerid") String issuerid,@Param("forwadingid") String forwadingid,@Param("rrn") String rrn,
+                            @Param("approvalcode") String approvalcode,@Param("terminalid") String terminalid,@Param("merchantid") String merchantid,
+                            @Param("merchantname") String merchantname,@Param("merchantcity") String merchantcity,@Param("merchantcountry") String merchantcountry,
+                            @Param("productindicator") String productindicator, @Param("customerdata") String customerdata, @Param("merchantcriteria") String merchantcriteria,
+                            @Param("currencycode") String currencycode, @Param("postalcode") String postalcode,@Param("customerpan") String customerpan);
 }

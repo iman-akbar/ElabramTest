@@ -30,7 +30,15 @@ public class UserController {
     @PostMapping(path = "/payment", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> postPayment(@RequestBody PaymentDto paymentDto) {
         LinkedHashMap<String, Object> res = new LinkedHashMap<>();
-        userRepository.postPayment(paymentDto.getProcessingcode(), paymentDto.getAdditionalfield());
+        userRepository.postPayment(paymentDto.getProcessingcode(), paymentDto.getAdditionalfield(), paymentDto.getPan(),
+                paymentDto.getTransactionamount(), paymentDto.getTransactiondatetime(), paymentDto.getTransactiontraceauditnumber(),
+                paymentDto.getSystemtraceauditnumber(),paymentDto.getLocaltransactiondatetime(),
+                paymentDto.getSettlementdate(), paymentDto.getCapturedate(), paymentDto.getMerchanttype(),
+                paymentDto.getPosentrymode(), paymentDto.getFeetype(), paymentDto.getFeeamount(), paymentDto.getAcquiredid(),
+                paymentDto.getIssuerid(), paymentDto.getForwadingid(), paymentDto.getRrn(), paymentDto.getApprovalcode(),
+                paymentDto.getTerminalid(), paymentDto.getMerchantid(), paymentDto.getMerchantname(), paymentDto.getMerchantcity(),
+                paymentDto.getMerchantcountry(), paymentDto.getProductindicator(), paymentDto.getCustomerdata(),
+                paymentDto.getMerchantcriteria(), paymentDto.getCurrencycode(), paymentDto.getPostalcode(),paymentDto.getCustomerpan());
         res.put("data", "ok");
         return ResponseEntity.ok().body(res);
     }
