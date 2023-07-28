@@ -46,8 +46,8 @@ public class UserController {
             res.put("data", data);
             return ResponseEntity.ok().body(res);
         } catch (Exception e) {
-            res.put("data", e);
-            return ResponseEntity.ok().body(res);
+            res.put("data", e.getMessage());
+            return ResponseEntity.badRequest().body(res);
         }
     }
 }
